@@ -4,6 +4,27 @@
 import { StyleSheet } from 'react-native';
 import { ThemeVariables } from '../../@types/theme';
 
+export const FONTS = {
+  Helvetica: 'Helvetica',
+};
+export const CUSTOM_FONTS = [FONTS.Helvetica];
+
+export const FONT_FILE_SUFFIX = {
+  100: '-ExtraLight',
+  200: '-Thin',
+  300: '-Light',
+  400: '-Regular',
+  500: '-Medium',
+  600: '-SemiBold',
+  700: '-Bold',
+  800: '-ExtraBold',
+  900: '-Black',
+  normal: '-Regular',
+  bold: '-Bold',
+  boldItalic: '-BoldItalic',
+  original: '-Regular',
+};
+
 export default function ({ FontSize, Colors }: ThemeVariables) {
   return StyleSheet.create({
     textTiny: {

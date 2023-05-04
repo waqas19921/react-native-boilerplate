@@ -5,9 +5,10 @@ import {
   fetchBaseQuery,
   FetchBaseQueryError,
 } from '@reduxjs/toolkit/query/react';
+import Config from '../config';
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: process.env.API_URL,
+  baseUrl: Config.API_URL,
 });
 
 const baseQueryWithInterceptor: BaseQueryFn<

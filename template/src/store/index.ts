@@ -9,33 +9,16 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-  Storage,
 } from 'redux-persist';
-import { MMKV } from 'react-native-mmkv';
 
 import { api } from '../services/api';
 import theme from './theme';
+import { reduxStorage } from '../utils/storage';
 
 const reducers = combineReducers({
   theme,
   [api.reducerPath]: api.reducer,
 });
-
-const storage = new MMKV();
-export const reduxStorage: Storage = {
-  setItem: (key, value) => {
-    storage.set(key, value);
-    return Promise.resolve(true);
-  },
-  getItem: key => {
-    const value = storage.getString(key);
-    return Promise.resolve(value);
-  },
-  removeItem: key => {
-    storage.delete(key);
-    return Promise.resolve();
-  },
-};
 
 const persistConfig = {
   key: 'root',
@@ -44,6 +27,7 @@ const persistConfig = {
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);
+const tronEnhancer = console.tron?.createEnhancer?.();
 
 const store = configureStore({
   reducer: persistedReducer,
@@ -61,6 +45,9 @@ const store = configureStore({
 
     return middlewares;
   },
+  // @ts-ignore
+  enhancers: defaultEnhancers =>
+    tronEnhancer ? [...defaultEnhancers, tronEnhancer] : defaultEnhancers,
 });
 
 const persistor = persistStore(store);
