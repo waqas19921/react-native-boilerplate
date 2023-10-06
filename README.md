@@ -8,7 +8,13 @@
 ![React Native Boilerplate Top Language](https://img.shields.io/github/languages/top/thecodingmachine/react-native-boilerplate)
 [![CI](https://github.com/thecodingmachine/react-native-boilerplate/actions/workflows/CI.yml/badge.svg)](https://github.com/thecodingmachine/react-native-boilerplate/actions/workflows/CI.yml)
 
-# TheCodingMachine React Native boilerplate
+# The fork of [TheCodingMachine React Native boilerplate](https://github.com/thecodingmachine/react-native-boilerplate)
+
+It will have some extra features like 
+* Global Error boundary
+* Reactotron Integration
+* Navigation utilities
+* And some folder structure and config updates
 
 This project is a [React Native](https://facebook.github.io/react-native/) boilerplate that can be used to kickstart a mobile application.
 
@@ -31,7 +37,7 @@ Follow instructions for your given `development OS` and `target OS`.
 To create a new project using the boilerplate simply run :
 
 ```
-npx react-native@latest init MyApp --template @thecodingmachine/react-native-boilerplate
+npx react-native@latest init MyApp --template waqas19921/react-native-boilerplate
 ```
 
 Assuming you have all the requirements installed, you can run the project by running:
